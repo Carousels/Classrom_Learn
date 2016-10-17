@@ -19,7 +19,10 @@ namespace News.Controllers
 
             return View();
         }
-
+        public ActionResult Welcome()
+        {
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

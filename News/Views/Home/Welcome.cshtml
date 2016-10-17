@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+  
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome</title>
+</head>
+<body>
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("主页", "Index", "Home")</li>
+        <li>@Html.ActionLink("关于", "About", "Home")</li>
+        <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+        <li>@Html.ActionLink("Welcome", "Welcome", "Home")</li>
+    </ul>
+    <div>
+        <p>当前时间:@DateTime.Now.ToString();</p>
+        @for (int i = 1; i <= 6; i++)
+        {
+           <li>第@(i)列</li>
+        }
+    </div>
+</body>                                                         
+</html>
