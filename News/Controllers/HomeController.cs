@@ -19,10 +19,31 @@ namespace News.Controllers
 
             return View();
         }
+        /// <summary>
+        /// Welcome页面
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Welcome()
         {
             return View();
         }
+        /// <summary>
+        /// 新闻页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult List()
+        {
+            string[] data = new string[]
+            {
+                "头条型新闻一",
+                "爆炸型新闻二",
+                "小众型新闻三"
+            };
+            // ViewBag.data = data;
+            ViewData.Model = data;
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
