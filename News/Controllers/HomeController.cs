@@ -44,7 +44,27 @@ namespace News.Controllers
            // ViewData.Model = data;
             return View();
         }
+        /// <summary>
+        /// 添加新闻
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Add()
+        {
+           
 
+            return View();
+        }
+        /// <summary>
+        /// 保存新闻内容
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Save(string title,string content)
+        {
+            ViewBag.Title = title;
+            ViewBag.Content = content;
+
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
