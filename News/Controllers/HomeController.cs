@@ -28,10 +28,10 @@ namespace News.Controllers
             return View();
         }
         /// <summary>
-        /// 新闻页面
+        /// 新闻列表
         /// </summary>
         /// <returns></returns>
-        public ActionResult List()
+        public ActionResult List(int page=3)
         {
             string[] data = new string[]
             {
@@ -39,8 +39,9 @@ namespace News.Controllers
                 "爆炸型新闻二",
                 "小众型新闻三"
             };
-            // ViewBag.data = data;
-            ViewData.Model = data;
+            ViewBag.data = data;
+            ViewBag.page = page;
+           // ViewData.Model = data;
             return View();
         }
 
