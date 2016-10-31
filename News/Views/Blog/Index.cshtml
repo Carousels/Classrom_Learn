@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var articles = ViewBag.BlogArticles as List<BlogArticle>;
+}
+
+<h2>博客</h2>
+
+<ol>
+    @foreach (var item in articles)
+    {
+        <li>
+         
+            <a href="Blog/Show/@item.Id">@item.Subject</a>
+        </li>
+    }
+</ol>
+
