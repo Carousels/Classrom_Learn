@@ -1,0 +1,31 @@
+﻿@model BlogArticle
+@{
+    ViewBag.Title = "Edit";
+
+}
+
+<h2>编辑</h2>
+
+<form action="/Blog/EditSave" method="post">
+    <input type="hidden" value="@Model.Id" name="Id" />
+    <table class="table table-bordered">
+        <tr>
+            <td>标题：</td>
+            <td><input type="text" name="Subject" value="@Model.Subject" />  </td>
+        </tr>
+        <tr>
+            <td>内容</td>
+            <td>
+                <textarea name="Body" cols="60" rows="4" style="width:600px; max-width:1000px;">@Model.Body</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary">保存</button>
+                <button type="reset" class="btn btn-warning">取消</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
