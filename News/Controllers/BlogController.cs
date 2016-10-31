@@ -20,5 +20,30 @@ namespace News.Controllers
 
             return View();
         }
+        public ActionResult AddArticle()
+        {
+            return View();
+        }
+        public ActionResult ArticleSave(string subject, string body)
+        {
+            var article = new BlogArticle();
+            article.Subject = subject;
+            article.Body = body;
+            article.DateCreated = DateTime.Now;
+
+            var db = new BlogDatabase();
+            db.BlogArticles.Add(article);
+            db.SaveChanges();
+
+            return Redirect("Index");
+        }
+        public ActionResult Show(int id)
+        {
+            var db = new BlogDatabase();
+            var article = db.BlogArticles.First(o => o.Id == id);
+
+            ViewData.Model = article;
+            return View();
+        }
     }
 }

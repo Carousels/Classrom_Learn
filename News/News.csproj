@@ -290,6 +290,8 @@
     <Content Include="Views\Home\Add.cshtml" />
     <Content Include="Views\Home\Save.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\AddArticle.cshtml" />
+    <Content Include="Views\Blog\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
