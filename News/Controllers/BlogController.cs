@@ -45,7 +45,11 @@ namespace News.Controllers
             ViewData.Model = article;
             return View();
         }
-
+        /// <summary>
+        /// 编辑博文
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Edit(int id)
         {
             var db = new BlogDatabase();
@@ -63,6 +67,21 @@ namespace News.Controllers
             article.Subject = subject;
             article.Body = body;
 
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+        /// <summary>
+        /// 删除博文
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Delete(int id)
+        {
+            var db = new BlogDatabase();
+            var article = db.BlogArticles.First(o => o.Id == id);
+
+            db.BlogArticles.Remove(article);
             db.SaveChanges();
 
             return RedirectToAction("Index");

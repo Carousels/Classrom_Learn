@@ -11,6 +11,7 @@
     {
         <li>
             @Html.ActionLink("[  编辑  ]", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("[  删除  ]", "Delete", new { id = item.Id }) |
             <a href="Blog/Show/@item.Id">@item.Subject</a>
         </li>
     }
