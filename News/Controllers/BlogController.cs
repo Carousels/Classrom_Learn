@@ -9,14 +9,20 @@ namespace News.Controllers
     public class BlogController : Controller
     {
         // GET: Blog
-        public ActionResult Index()
+        public ActionResult Index(string ss)
         {
             var db = new BlogDatabase();
 
             db.Database.CreateIfNotExists();
 
-            var lst = db.BlogArticles.OrderByDescending(o => o.Id).ToList();
-            ViewBag.BlogArticles = lst;
+            var lst = db.BlogArticles.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(ss))
+            {
+                lst = lst.Where(o => o.Subject.Contains(ss));
+            }
+                      
+            ViewBag.BlogArticles = lst.OrderByDescending(o => o.Id).ToList();
+            ViewBag.ss = ss;
 
             return View();
         }
