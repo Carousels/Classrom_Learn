@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -58,18 +59,18 @@ namespace News
     public class BlogArticle
     {
         public int Id { get; set; }
-
         public int BlogId { get; set; }
-
         /// <summary>
         /// 文章标题
         /// </summary>
+        [Required]
+        [StringLength(maximumLength: 20, MinimumLength = 5)]
         public string Subject { get; set; }
 
         /// <summary>
         /// 文章内容
         /// </summary>
-
+        [Required]
         public string Body { get; set; }
 
         /// <summary>
