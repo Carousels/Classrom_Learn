@@ -30,11 +30,11 @@ namespace News.Controllers
         {
             return View();
         }
-        public ActionResult ArticleSave(string subject, string body)
+        public ActionResult ArticleSave(BlogArticle model)
         {
             var article = new BlogArticle();
-            article.Subject = subject;
-            article.Body = body;
+            article.Subject = model.Subject;
+            article.Body = model.Body;
             article.DateCreated = DateTime.Now;
 
             var db = new BlogDatabase();
