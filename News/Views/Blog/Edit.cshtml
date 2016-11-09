@@ -15,7 +15,9 @@
             <td>
                 @* @Html.TextBox("Subject")*@
                 @Html.TextBoxFor(o => o.Subject)
-                @Html.ValidationMessageFor(o => o.Subject)
+                <div>
+                    @Html.ValidationMessageFor(o => o.Subject)
+                </div>
             </td>
         </tr>
         <tr>
@@ -23,7 +25,9 @@
             <td>
                 @* @Html.TextArea("Body", new { style = "width:600px; max-width:1000px;" }) *@
                 @Html.TextAreaFor(o => o.Body, new { style = "width:600px; max-width:1000px;" })
-                @Html.ValidationMessageFor(o => o.Body)
+                <div>
+                    @Html.ValidationMessageFor(o => o.Body)
+                </div>
             </td>
         </tr>
         <tr>
