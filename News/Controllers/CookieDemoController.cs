@@ -44,7 +44,10 @@ namespace News.Controllers
                  Response.Cookies.Add(cookie);
                return RedirectToAction("AddArticle", "Blog");
              }
-            return View();
+            else
+            {
+                return RedirectToAction("Login", "CookieDemo");
+            }
         }
     }
 } 
